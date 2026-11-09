@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicine Information | MediAI</title>
+  <meta name="description" content="MediAI: an AI-powered medical assistant that explains health information in simple language. Educational use only.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a7b78'/%3E%3Cpath d='M6 17h5l3-7 4 12 3-5h5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="medicines" data-disclaimer="true">
+<main id="content" class="page">
+  <header class="page-head"><h1 data-i18n="nav_medicines">Medicine Info</h1><p data-i18n="med_sub"></p></header>
+  <form id="medicine-form" class="card" novalidate>
+    <label class="label" for="medicine-name" data-i18n="nav_medicines">Medicine Info</label>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <input id="medicine-name" type="text" maxlength="80" style="flex:1;min-width:200px" autocomplete="off" data-i18n-placeholder="med_ph">
+      <button class="btn btn-primary" id="submit" type="submit"><span data-icon="search"></span><span data-i18n="search">Search</span></button>
+    </div>
+    <div class="chips" style="margin-top:12px"><span class="muted small" data-i18n="med_try" style="align-self:center">Try:</span>
+      <button type="button" class="chip example">Paracetamol</button><button type="button" class="chip example">Metformin</button>
+      <button type="button" class="chip example">Amoxicillin</button><button type="button" class="chip example">Dolo 650</button></div>
+  </form>
+  <div id="results" aria-live="polite"></div>
+</main>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/medicines.js"></script>
+</body>
+</html>

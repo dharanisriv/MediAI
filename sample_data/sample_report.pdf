@@ -1,0 +1,50 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 869 >>
+stream
+BT /F1 10 Tf 40 800 Td 14 TL
+(SAMPLE DIAGNOSTICS LAB  [fictional demo report]) '
+(Patient: DEMO PATIENT    Age/Sex: 34 / F    Date: 05-11-2026) '
+() '
+(COMPLETE BLOOD COUNT) '
+(Test               Result      Unit          Reference Range      Flag) '
+(Hemoglobin         10.2        g/dL          12.0 - 15.0          L) '
+(RBC Count          4.1         million/cumm  3.8 - 4.8) '
+(WBC Count          7200        /cumm         4000 - 11000) '
+(Platelet Count     2.6         lakh/cumm     1.5 - 4.1) '
+(MCV                74          fL            83 - 101             L) '
+() '
+(BIOCHEMISTRY) '
+(Fasting Glucose    112         mg/dL         70 - 100             H) '
+(Creatinine         0.8         mg/dL         0.6 - 1.1) '
+(TSH                2.4         uIU/mL        0.4 - 4.0) '
+() '
+(Note: This is a made-up report for testing MediAI. Not a real patient.) '
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001161 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1229
+%%EOF

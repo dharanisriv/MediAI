@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Summary | MediAI</title>
+  <meta name="description" content="MediAI: an AI-powered medical assistant that explains health information in simple language. Educational use only.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a7b78'/%3E%3Cpath d='M6 17h5l3-7 4 12 3-5h5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="summary" data-disclaimer="true">
+<main id="content" class="page">
+  <header class="page-head"><h1 data-i18n="nav_summary">Health Summary</h1><p data-i18n="sum_sub"></p></header>
+  <div id="live-emergency" aria-live="assertive"></div>
+  <form id="summary-form" class="card" novalidate>
+    <label class="label" for="age" data-i18n="age">Age (years)</label><input id="age" type="number" min="0" max="120" inputmode="numeric" style="max-width:160px">
+    <label class="label" for="history" data-i18n="f_history"></label><textarea id="history" rows="3" maxlength="3000" ></textarea>
+    <label class="label" for="conditions" data-i18n="f_conditions"></label><textarea id="conditions" rows="3" maxlength="3000" ></textarea>
+    <label class="label" for="medications" data-i18n="f_meds"></label><textarea id="medications" rows="3" maxlength="3000" ></textarea>
+    <label class="label" for="allergies" data-i18n="f_allergies"></label><textarea id="allergies" rows="2" maxlength="3000" ></textarea>
+    <label class="label" for="symptoms" data-i18n="f_symptoms"></label><textarea id="symptoms" rows="3" maxlength="3000" ></textarea>
+    <label class="label" for="report_findings" data-i18n="f_findings"></label><textarea id="report_findings" rows="4" maxlength="3000" ></textarea>
+    <label class="label" for="concerns" data-i18n="f_concerns"></label><textarea id="concerns" rows="3" maxlength="3000" ></textarea>
+    <label class="check" style="margin-top:18px"><input type="checkbox" id="save-local"><span data-i18n="save_browser"></span></label>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="submit" type="submit"><span data-i18n="generate_summary">Generate summary</span></button>
+      <button class="btn btn-ghost" id="clear-saved" type="button"><span data-i18n="clear_saved">Clear saved data</span></button>
+    </div>
+  </form>
+  <div id="results" aria-live="polite"></div>
+</main>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/summary.js"></script>
+</body>
+</html>

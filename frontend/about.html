@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About MediAI</title>
+  <meta name="description" content="MediAI: an AI-powered medical assistant that explains health information in simple language. Educational use only.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a7b78'/%3E%3Cpath d='M6 17h5l3-7 4 12 3-5h5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="about" data-disclaimer="true">
+<main id="content" class="page">
+  <header class="page-head"><h1 data-i18n="nav_about">About</h1><p>MediAI is an AI-powered medical assistant that helps people understand health information in simple, accessible language. This page is shown in English.</p></header>
+  <section class="card"><h2>Why it exists</h2>
+    <p>Medical reports, symptoms and medicine leaflets are hard to understand, especially when they are not in your own language. MediAI explains them in plain words in English, Hindi, Telugu and Tamil, and helps you prepare questions for your doctor. It was built as an internship project for the Indian Servers Internship Innovation Challenge.</p></section>
+  <section class="card"><h2>What it can do</h2>
+    <ul class="info-list">
+      <li><strong>Report Explainer:</strong> reads photos, PDFs and text of lab reports and explains each test, flagging values the report itself marks as high or low.</li>
+      <li><strong>Symptom Checker:</strong> choose a body area and symptoms to get general, non-diagnostic guidance.</li>
+      <li><strong>Medicine Info:</strong> general facts, side effects and warnings, based on an official drug label where one is found.</li>
+      <li><strong>Health Summary:</strong> turns the information you type into a structured summary for a healthcare professional.</li>
+      <li><strong>Emergency warnings:</strong> fixed safety rules (not AI) show a 112 alert for serious warning signs.</li>
+    </ul></section>
+  <section class="card"><h2>How it works</h2>
+    <div class="flow"><div>Browser<small>HTML, CSS, JavaScript</small></div><div>Flask server<small>validates and protects</small></div><div>Safety rules<small>run first, no AI</small></div><div>Gemini API<small>explains in your language</small></div></div>
+    <p>Your API key stays on the server. Uploaded files are processed in memory and never saved.</p></section>
+  <section class="card"><h2>Limits you should know</h2>
+    <ul class="info-list">
+      <li>AI can make mistakes, including reading numbers wrongly from photos. Always check the extracted text.</li>
+      <li>Emergency keyword rules cannot catch every possible phrase. If you feel very unwell, call 112 without using this app.</li>
+      <li>Symptom names are shown in English; AI answers follow the language you choose.</li>
+      <li>Medicine data comes from US FDA labels when found. Indian brands can differ.</li>
+    </ul></section>
+</main>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

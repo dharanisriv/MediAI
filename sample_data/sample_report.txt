@@ -1,0 +1,17 @@
+SAMPLE DIAGNOSTICS LAB  (fictional demo report)
+Patient: DEMO PATIENT    Age/Sex: 34 / F    Date: 05-11-2026
+
+COMPLETE BLOOD COUNT
+Test               Result      Unit          Reference Range      Flag
+Hemoglobin         10.2        g/dL          12.0 - 15.0          L
+RBC Count          4.1         million/cumm  3.8 - 4.8
+WBC Count          7200        /cumm         4000 - 11000
+Platelet Count     2.6         lakh/cumm     1.5 - 4.1
+MCV                74          fL            83 - 101             L
+
+BIOCHEMISTRY
+Fasting Glucose    112         mg/dL         70 - 100             H
+Creatinine         0.8         mg/dL         0.6 - 1.1
+TSH                2.4         uIU/mL        0.4 - 4.0
+
+Note: This is a made-up report for testing MediAI. Not a real patient.

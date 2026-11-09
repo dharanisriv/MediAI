@@ -1,0 +1,9 @@
+# MediAI Python dependencies  (install with:  pip install -r requirements.txt)
+Flask>=3.0,<4          # web framework (serves the website + API)
+python-dotenv>=1.0     # reads your secret keys from the .env file
+google-genai>=1.0      # official Google Gemini SDK
+requests>=2.31         # used for the free openFDA medicine-label lookup
+pypdf>=4.0             # extracts text from PDF reports
+Pillow>=10.0           # validates / resizes uploaded images
+pytesseract>=0.3.10    # optional OCR (needs the Tesseract program; MediAI falls back to Gemini vision without it)
+gunicorn>=21.2         # production web server used when you deploy online (not needed on Windows)

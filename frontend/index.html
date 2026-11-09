@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediAI: understand your health information</title>
+  <meta name="description" content="MediAI: an AI-powered medical assistant that explains health information in simple language. Educational use only.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a7b78'/%3E%3Cpath d='M6 17h5l3-7 4 12 3-5h5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="landing" data-layout="landing" class="landing-bg">
+<main id="content">
+  <section class="hero container">
+    <div>
+      <h1 data-i18n="hero_title">Understand your health information in plain language</h1>
+      <p class="lead" data-i18n="hero_sub"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="dashboard.html" data-i18n="get_started">Get started</a>
+        <a class="btn btn-ghost" href="#features" data-i18n="features_title">What MediAI can do</a>
+      </div>
+      <div class="alert alert-info" role="note"><span data-icon="shield"></span><p class="small" data-i18n="disclaimer_banner"></p></div>
+    </div>
+    <div class="sample">
+      <div class="sample-head"><strong data-i18n="nav_report">Report Explainer</strong><span class="badge badge-neutral" data-i18n="example">Example</span></div>
+      <div class="lab-item">
+        <div class="lab-top"><span class="lab-name" data-i18n="ex_name">Hemoglobin</span><span class="badge badge-low" data-i18n="flag_low">Low</span></div>
+        <div class="lab-nums">
+          <span><small data-i18n="col_value">Your value</small><strong>10.2 g/dL</strong></span>
+          <span><small data-i18n="col_range">Range in report</small><strong>12.0 – 15.0 g/dL</strong></span>
+        </div>
+        <p class="lab-meaning" data-i18n="ex_explain"></p>
+      </div>
+      <div class="sample-note"><span data-icon="sparkle"></span><span data-i18n="ai_badge"></span></div>
+    </div>
+  </section>
+
+  <section class="features container" id="features">
+    <h2 data-i18n="features_title">What MediAI can do</h2>
+    <div class="feature-grid">
+      <a class="feature wide" href="report.html"><span class="icon-tile"><span data-icon="file"></span></span><h3 data-i18n="nav_report"></h3><p data-i18n="f_report_d"></p></a>
+      <a class="feature wide" href="symptoms.html"><span class="icon-tile blue"><span data-icon="thermo"></span></span><h3 data-i18n="nav_symptoms"></h3><p data-i18n="f_symptoms_d"></p></a>
+      <a class="feature mid" href="medicines.html"><span class="icon-tile"><span data-icon="pill"></span></span><h3 data-i18n="nav_medicines"></h3><p data-i18n="f_medicines_d"></p></a>
+      <a class="feature mid" href="summary.html"><span class="icon-tile blue"><span data-icon="clipboard"></span></span><h3 data-i18n="nav_summary"></h3><p data-i18n="f_summary_d"></p></a>
+      <div class="feature mid"><span class="icon-tile"><span data-icon="globe"></span></span><h3 data-i18n="f_lang_t"></h3><p data-i18n="f_lang_d"></p></div>
+      <div class="feature full"><span class="icon-tile red"><span data-icon="alert"></span></span><div><h3 data-i18n="f_emergency_t"></h3><p data-i18n="f_emergency_d"></p></div></div>
+    </div>
+  </section>
+</main>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

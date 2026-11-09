@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Symptom Checker | MediAI</title>
+  <meta name="description" content="MediAI: an AI-powered medical assistant that explains health information in simple language. Educational use only.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a7b78'/%3E%3Cpath d='M6 17h5l3-7 4 12 3-5h5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="symptoms" data-disclaimer="true">
+<main id="content" class="page">
+  <header class="page-head"><h1 data-i18n="nav_symptoms">Symptom Checker</h1><p data-i18n="sym_sub"></p></header>
+  <div id="live-emergency" aria-live="assertive"></div>
+  <form id="symptom-form" novalidate>
+    <section class="card">
+      <h2 data-i18n="step_area">1. Choose a body area</h2>
+      <div class="bodymap">
+        <div class="body-wrap">
+          <svg class="body-svg" id="body-svg" viewBox="0 0 200 420" role="group" aria-label="Body map">
+        <g id="view-front">
+        <rect class="region" data-area="arms" tabindex="0" role="button" x="36" y="100" width="22" height="112" rx="11" transform="rotate(6 47 100)"/>
+        <rect class="region" data-area="arms" tabindex="0" role="button" x="142" y="100" width="22" height="112" rx="11" transform="rotate(-6 153 100)"/>
+        <ellipse class="region" data-area="hands" tabindex="0" role="button" cx="35" cy="228" rx="11" ry="13"/>
+        <ellipse class="region" data-area="hands" tabindex="0" role="button" cx="165" cy="228" rx="11" ry="13"/>
+        <rect class="region" data-area="legs" tabindex="0" role="button" x="70" y="222" width="28" height="150" rx="13"/>
+        <rect class="region" data-area="legs" tabindex="0" role="button" x="102" y="222" width="28" height="150" rx="13"/>
+        <ellipse class="region" data-area="feet" tabindex="0" role="button" cx="80" cy="394" rx="18" ry="9"/>
+        <ellipse class="region" data-area="feet" tabindex="0" role="button" cx="120" cy="394" rx="18" ry="9"/>
+        <rect class="region" data-area="abdomen" tabindex="0" role="button" x="66" y="158" width="68" height="64" rx="12"/>
+        <rect class="region" data-area="chest" tabindex="0" role="button" x="62" y="94" width="76" height="64" rx="14"/>
+        <rect class="region" data-area="throat" tabindex="0" role="button" x="89" y="70" width="22" height="26" rx="8"/>
+        <ellipse class="region" data-area="head" tabindex="0" role="button" cx="100" cy="42" rx="26" ry="31"/>
+        <ellipse class="region" data-area="ears" tabindex="0" role="button" cx="72" cy="44" rx="5" ry="9"/>
+        <ellipse class="region" data-area="ears" tabindex="0" role="button" cx="128" cy="44" rx="5" ry="9"/>
+        <ellipse class="region" data-area="eyes" tabindex="0" role="button" cx="89" cy="38" rx="5" ry="3"/>
+        <ellipse class="region" data-area="eyes" tabindex="0" role="button" cx="111" cy="38" rx="5" ry="3"/>
+        <path class="region" data-area="nose" tabindex="0" role="button" d="M100 42 L94 58 Q100 62 106 58 Z"/>
+        </g>
+        <g id="view-back" hidden>
+        <rect class="region" data-area="arms" tabindex="0" role="button" x="36" y="100" width="22" height="112" rx="11" transform="rotate(6 47 100)"/>
+        <rect class="region" data-area="arms" tabindex="0" role="button" x="142" y="100" width="22" height="112" rx="11" transform="rotate(-6 153 100)"/>
+        <ellipse class="region" data-area="hands" tabindex="0" role="button" cx="35" cy="228" rx="11" ry="13"/>
+        <ellipse class="region" data-area="hands" tabindex="0" role="button" cx="165" cy="228" rx="11" ry="13"/>
+        <rect class="region" data-area="legs" tabindex="0" role="button" x="70" y="222" width="28" height="150" rx="13"/>
+        <rect class="region" data-area="legs" tabindex="0" role="button" x="102" y="222" width="28" height="150" rx="13"/>
+        <ellipse class="region" data-area="feet" tabindex="0" role="button" cx="80" cy="394" rx="18" ry="9"/>
+        <ellipse class="region" data-area="feet" tabindex="0" role="button" cx="120" cy="394" rx="18" ry="9"/>
+        <rect class="region" data-area="back" tabindex="0" role="button" x="62" y="94" width="76" height="126" rx="14"/>
+        <rect class="region" data-area="back" tabindex="0" role="button" x="89" y="70" width="22" height="26" rx="8"/>
+        <ellipse class="region" data-area="head" tabindex="0" role="button" cx="100" cy="42" rx="26" ry="31"/>
+        <ellipse class="region" data-area="ears" tabindex="0" role="button" cx="72" cy="44" rx="5" ry="9"/>
+        <ellipse class="region" data-area="ears" tabindex="0" role="button" cx="128" cy="44" rx="5" ry="9"/>
+        </g>
+      </svg>
+          <div class="body-toggle"><button type="button" class="chip" id="view-toggle" data-i18n="view_back">Back view</button></div>
+        </div>
+        <div>
+          <div class="chips" id="area-chips" role="group" aria-label="Body areas"></div>
+          <h2 style="margin-top:22px" data-i18n="step_symptoms">2. Choose symptoms</h2>
+          <p class="small muted" data-i18n="symptom_note"></p>
+          <div id="symptom-list" class="check-grid"><p class="muted" data-i18n="pick_area">Choose a body area to see common symptoms.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="card">
+      <h2 data-i18n="step_details">3. Add details</h2>
+      <label class="label" for="description" data-i18n="desc_label">Describe your symptoms</label>
+      <textarea id="description" rows="4" maxlength="2000"></textarea>
+      <div class="row">
+        <div><label class="label" for="duration" data-i18n="duration">How long?</label>
+          <select id="duration">
+            <option value="Less than a day" data-i18n="dur_1"></option><option value="1 to 3 days" data-i18n="dur_2"></option>
+            <option value="4 to 7 days" data-i18n="dur_3"></option><option value="1 to 4 weeks" data-i18n="dur_4"></option>
+            <option value="More than a month" data-i18n="dur_5"></option>
+          </select></div>
+        <div><label class="label" for="age" data-i18n="age">Age (years)</label><input id="age" type="number" min="0" max="120" inputmode="numeric"></div>
+      </div>
+      <span class="label" data-i18n="severity">Severity</span>
+      <div class="seg" role="radiogroup">
+        <label><input type="radio" name="severity" value="mild"><span data-i18n="sev_mild">Mild</span></label>
+        <label><input type="radio" name="severity" value="moderate" checked><span data-i18n="sev_moderate">Moderate</span></label>
+        <label><input type="radio" name="severity" value="severe"><span data-i18n="sev_severe">Severe</span></label>
+      </div>
+      <label class="label" for="history" data-i18n="history_label">Medical history (optional)</label>
+      <textarea id="history" rows="3" maxlength="1500"></textarea>
+      <div class="btn-row"><button class="btn btn-primary" id="submit" type="submit"><span data-i18n="check_symptoms">Check symptoms</span></button></div>
+    </section>
+  </form>
+  <div id="results" aria-live="polite"></div>
+</main>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/symptoms.js"></script>
+</body>
+</html>
